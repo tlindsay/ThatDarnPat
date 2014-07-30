@@ -1,8 +1,63 @@
+/***********************
+ * Old Color Scheme
+ ***********************
+
 @bg: #fff9f3;
-// @base: #99ebff;
+@base: #99ebff;
 @headColor: #70dbff;
 @bodyColor: #444;
-@headFont: 'Oswald', sans-serif;
+
+************************/
+
+/***********************
+ * NEW COLOR SCHEME
+ * http://color.hailpixel.com/#EEF0D1,E7C1B6,ABE3CF,B4DA90,FFF88F,FFC875,D6C2FF,
+ ***********************/
+
+// @pink:   #e7c1b6;
+// @blue:   #abe3cf;
+
+@bg: #f2f0ec;
+
+// @pink: #e6b1a3;
+// @blue: #a1e3cc;
+// @green:  #b4da90;
+// @yellow: #f5ef99;
+// @orange: #ffc875;
+// @purple: #d6c2ff;
+
+// @headColor: @pink;
+// @bodyColor: #444;
+
+/***********************
+ * BASE 16 COLOR SCHEME
+ * https://github.com/chriskempson/base16
+ ***********************/
+
+@red: 		#ac4142;
+@orange: 	#d28445;
+@yellow: 	#f4bf75;
+@green: 	#90a959;
+@light-blue:#75b5aa;
+@blue: 		#6a9fb5;
+@purple: 	#aa759f;
+@brown: 	#8f5536;
+
+@black: 	#151515;
+@dgray1: 	#202020;
+@dgray2: 	#303030;
+@dgray3: 	#505050;
+@lgray1: 	#b0b0b0;
+@lgray2: 	#d0d0d0;
+@lgray3: 	#e0e0e0;
+@white: 	#f5f5f5;
+
+@headColor: @red;
+@bodyColor: @dgray1;
+
+@import "../assets/fonts/ostrich/ostrich-sans.css";
+
+@headFont: 'Ostrich Sans Inline', sans-serif;
 @bodyFont: 'Roboto Slab', serif;
 
 body{
@@ -15,11 +70,35 @@ body{
 h1{
 	color: @headColor;
 	font-family: @headFont;
-	font-weight: 700;
+	letter-spacing: .1em;
+	font-size:4rem;
 }
 
 h2{
+	font-size:3rem;
 	font-family: @headFont;
 	font-weight: 400;
 	color: @headColor;
+
+}
+
+a{
+	color: @light-blue;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+code, code *{
+	font-family:'Fantasque Sans Mono';
+}
+
+.navigation{
+	width:100%;
+	border-top: 1px solid @lgray1;
+	margin-bottom:1rem;
+	word-spacing:1rem;
+}
+
+#content {
+	padding:0 8rem;
 }
