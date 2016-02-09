@@ -19,3 +19,5 @@ gem 'jquery-middleman'
 gem 'middleman-autoprefixer'
 
 gem 'middleman-gh-pages'
+
+gem 'evil_icons'

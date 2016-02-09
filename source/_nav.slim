@@ -5,7 +5,8 @@ nav
     li.nav-item
       = link_to 'Projects', 'projects'
     li.nav-item
-      = sprockets.find_asset('logo.svg').to_s
+      = link_to '/', class: 'logo' do
+        = inline_svg('svg/logo.svg')
     li.nav-item
       = link_to 'Resumé', 'resume'
     li.nav-item

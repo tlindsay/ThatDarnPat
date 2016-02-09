@@ -1,0 +1,17 @@
+@import 'variables';
+
+@keyframes rotate {
+  0% { transform: rotateZ(0deg); transform-origin:center center; }
+  100% { transform: rotateZ(360deg); transform-origin:center center; }
+}
+
+@keyframes rotateHue { 
+  0% { stroke: #ac5;   }
+  50% { stroke: #5ac;  }
+  100% { stroke: #c5a; }
+}
+
+@keyframes drawCircle {
+  0% {stroke-dashoffset: 1474; }
+  100% { stroke-dashoffset: -1474; }
+}

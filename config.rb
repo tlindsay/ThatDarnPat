@@ -32,6 +32,9 @@
 # Helpers
 ###
 
+require 'evil_icons'
+helpers EvilIcons::Helpers
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 
