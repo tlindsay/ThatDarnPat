@@ -10,18 +10,21 @@ html
 
     title= "#{current_page.data.title || 'That Darn Pat'} | Patrick Lindsay"
 
-    link   type="text/css" rel="stylesheet" href="/stylesheets/styles.css"
-    script type="text/javascript" src="/javascripts/main.js"
+    = stylesheet_link_tag 'https://cdn.jsdelivr.net/evil-icons/1.7.8/evil-icons.min.css'
+    = stylesheet_link_tag 'styles'
+    = javascript_include_tag 'main'
   
     = yield_content :assets
 
   body
+    = evil_icons_sprite
     = partial 'nav'
     .container
       == yield
     .footer
       .footer--f-block.left
         | Made by Patrick Lindsay
-        = evil_icon 'ei-github', size: :m
+        = evil_icon 'ei-sc-github', size: :s
       .footer--f-block.right
         - "&copy; #{lorem.date}"
+      .cf

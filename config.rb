@@ -59,7 +59,6 @@ set :images_dir, 'images'
 set :fonts_dir, 'fonts'
 
 activate :directory_indexes
-activate :middleman_scavenger
 
 # Build-specific configuration
 configure :build do

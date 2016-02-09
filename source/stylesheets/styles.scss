@@ -11,7 +11,8 @@
 @import 'animations';
 
 * { @include butler; }
-body { background: #efefef; color: $dg; max-width: 960px; margin: 0 auto;}
+body { background: $white; color: $dg; max-width: 960px; margin: 0 auto;}
+.cf {clear:both !important;}
 
 .hero {
   margin: 15% auto 0;
@@ -42,6 +43,7 @@ nav {
 
         &:hover {
           border-bottom: 2px solid $dg;
+          animation: rotateHue 2s infinite, rotateBorderHue 2s infinite reverse;
         }
 
         &.logo {
@@ -55,14 +57,19 @@ nav {
           width: 70px;
           margin-top:-35px;
           
-          svg #border{ transform: rotateZ(-90deg); transform-origin: center; stroke: $dg;}
+          svg #border{ 
+            transform: rotateZ(-90deg);
+            transform-origin: center;
+            stroke: $dg;
+          }
           &:hover { 
             border-bottom: none; 
             svg #border {
               stroke-dasharray: 37;
-              animation: rotate 3s infinite linear;
-              circle {animation: rotateHue 4s infinite alternate;}
+              animation: rotate 2s 1 cubic-bezier(0.44, 0.17, 1, 1), rotate 2s infinite linear 2s;
+              circle { animation: rotateStrokeHue 4s infinite; }
             }
+            svg #text { animation: rotateFillHue 3s infinite reverse; }
           }
         }
       }
@@ -72,6 +79,8 @@ nav {
 }
 
 .footer {
+  max-width: 640px;
+  margin:0 auto;
   .left  { float: left;  }
   .right { float: right; }
 }
