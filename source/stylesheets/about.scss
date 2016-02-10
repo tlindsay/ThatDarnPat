@@ -2,11 +2,3 @@
 @import 'animations';
 
 p { line-height: 1.5em; }
-
-.social {
-  text-align: center;
-  a {
-    text-decoration: none;
-    &:hover .icon { animation: rotateFillHue 3s infinite linear; }
-  }
-}

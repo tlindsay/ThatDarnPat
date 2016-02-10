@@ -81,6 +81,20 @@ nav {
 .container { max-width: 640px; margin: 0 auto; }
 
 .footer {
+  .social {
+    border-top: 1px solid $dg;
+    animation: rotateBorderHue 3s infinite linear;
+
+    padding-top: 10px;
+    margin: 35px auto 0;
+    max-width: 300px;
+    text-align: center;
+    a {
+      text-decoration: none;
+      &:hover .icon { animation: rotateFillHue 3s infinite linear; }
+    }
+  }
+
   .left  { float: left;  }
   .right { float: right; }
 }

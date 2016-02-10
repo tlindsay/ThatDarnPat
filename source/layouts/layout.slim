@@ -24,9 +24,8 @@ html
     .container.content
       == yield
     .container.footer
-      .footer--f-block.left
-        | Made by Patrick Lindsay
-        = evil_icon 'ei-sc-github', size: :s
-      .footer--f-block.right
-        - "&copy; #{lorem.date}"
-      .cf
+      .social
+        = link_to '//twitter.com/thatdarnpat', title: 'Twitter'
+          = evil_icon 'ei-sc-twitter', size: :l
+        = link_to '//github.com/tlindsay', title: 'Github'
+          = evil_icon 'ei-sc-github', size: :l
