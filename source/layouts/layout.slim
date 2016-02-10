@@ -12,9 +12,9 @@ html
 
     = stylesheet_link_tag 'https://cdn.jsdelivr.net/evil-icons/1.7.8/evil-icons.min.css'
     = stylesheet_link_tag 'styles'
-    = stylesheet_link_tag current_page.data.title.downcase
+    = stylesheet_link_tag current_page.data.title.downcase unless current_page.data.title.blank?
     = javascript_include_tag 'main'
-    = javascript_include_tag current_page.data.title.downcase
+    = javascript_include_tag current_page.data.title.downcase unless current_page.data.title.blank?
   
     = yield_content :assets
 

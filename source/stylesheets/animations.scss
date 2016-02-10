@@ -60,7 +60,15 @@
   100% { fill: $r; }
 }
 
+@keyframes shake {
+  0%, 100%  { transform: translateX(0px);   }
+  20%, 60%  { transform: translateX(20px);  }
+  40%, 80%  { transform: translateX(-20px); }
+}
+
 @keyframes drawCircle {
   0% {stroke-dashoffset: 1474; }
   100% { stroke-dashoffset: -1474; }
 }
+
+.shake { animation: shake .75s ease-in-out}

@@ -1,5 +1,11 @@
 @import 'variables';
 @import 'animations';
+
+.success-message {
+  h1 { font-size: 4em; animation: rotateHue 3s infinite; }
+  h3 { font-size: 2em; }
+}
+
 #contact-form {
   fieldset {
     border:none;
@@ -7,23 +13,34 @@
     &#identity{ min-width: 200px; }
     &#message { width: 100%; max-width: 380px; height: 100%; vertical-align: top; }
   }
-  label, input { display: block; }
-  input, textarea {
-    background: transparent;
-    font-family: sans-serif;
-    border: none;
-    border-bottom: 1px solid $dg;
 
-    outline: none;
+  fieldset#identity, fieldset#message {
+    label, input { display: block; }
+    input, textarea {
+      background: transparent;
+      font-family: sans-serif;
+      border: none;
+      border-bottom: 1px solid $dg;
+      font-size: 14px;
+
+      outline: none;
+
+      &:focus { border-width: 2px; animation: rotateBorderHue 3s infinite linear; }
+    }
+    input { 
+      margin: 10px 0 20px;
+      padding-bottom: 5px;
+      width: 100%;
+    }
+    textarea { 
+      width: 100%;
+      min-height: 85px;
+      padding: 10px;
+      border-left: 1px solid $dg;
+      line-height: 20px;
+    }
   }
-  input { margin: 10px 0 20px; }
-  textarea { 
-    width: 100%;
-    min-height: 70px;
-    padding: 10px;
-    border-left: 1px solid $dg;
-    line-height: 16px;
-  }
+
   .g-recaptcha { display:inline-block; }
   .submit {
     background-color: $dg;
@@ -39,6 +56,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 100;
+    &:focus { outline: none; }
     &:hover{
       animation: rotateBackgroundHue 3s infinite linear;
       cursor: pointer;

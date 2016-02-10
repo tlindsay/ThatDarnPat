@@ -1,11 +1,13 @@
 ---
 title: 'Contact'
 ---
+.success-message
 script[src="https://www.google.com/recaptcha/api.js"]
 = form_tag '//formspree.io/patrick.lindsay@me.com', method: 'post', id: 'contact-form'
+  .error-message
   = field_set_tag id: 'identity'
     label for="name"= "Name:"
-    = text_field_tag :name, placeholder: lorem.name
+    = text_field_tag :name, placeholder: lorem.name, autofocus: true
     label for="_replyto"= "Email:"
     = email_field_tag :_replyto, placeholder: lorem.email
   = field_set_tag id: 'message'
