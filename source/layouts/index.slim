@@ -10,9 +10,9 @@ html
 
     title= "#{current_page.data.title || 'That Darn Pat'} | Patrick Lindsay"
 
-    link   type="text/css" rel="stylesheet" href="/stylesheets/styles.css"
-    script type="text/javascript" src="/javascripts/main.js"
-    script type="text/javascript" src="/javascripts/index.js"
+    = stylesheet_link_tag 'styles'
+    = javascript_include_tag 'main'
+    = javascript_include_tag 'index'
 
     = yield_content :assets
 

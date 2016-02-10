@@ -12,16 +12,18 @@ html
 
     = stylesheet_link_tag 'https://cdn.jsdelivr.net/evil-icons/1.7.8/evil-icons.min.css'
     = stylesheet_link_tag 'styles'
+    = stylesheet_link_tag current_page.data.title.downcase
     = javascript_include_tag 'main'
+    = javascript_include_tag current_page.data.title.downcase
   
     = yield_content :assets
 
   body
     = evil_icons_sprite
     = partial 'nav'
-    .container
+    .container.content
       == yield
-    .footer
+    .container.footer
       .footer--f-block.left
         | Made by Patrick Lindsay
         = evil_icon 'ei-sc-github', size: :s
