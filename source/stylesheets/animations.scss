@@ -16,6 +16,17 @@
   100% { color: $r; }
 }
 
+@keyframes rotateBackgroundHue {
+  0%   { background-color: $r; }
+  9%   { background-color: $o; }
+  26%  { background-color: $y; }
+  43%  { background-color: $g; }
+  60%  { background-color: $b; }
+  77%  { background-color: $i; }
+  94%  { background-color: $v; }
+  100% { background-color: $r; }
+}
+
 @keyframes rotateBorderHue {
   0%   { border-color: $r; }
   9%   { border-color: $o; }

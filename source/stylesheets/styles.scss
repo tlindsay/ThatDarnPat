@@ -43,7 +43,7 @@ nav {
 
         &:hover {
           border-bottom: 2px solid $dg;
-          animation: rotateHue 2s infinite, rotateBorderHue 2s infinite reverse;
+          animation: rotateHue 2s infinite linear, rotateBorderHue 2s infinite reverse linear;
         }
 
         &.logo {
@@ -69,7 +69,7 @@ nav {
               animation: rotate 2s 1 cubic-bezier(0.44, 0.17, 1, 1), rotate 2s infinite linear 2s;
               circle { animation: rotateStrokeHue 4s infinite; }
             }
-            svg #text { animation: rotateFillHue 3s infinite reverse; }
+            svg #text { animation: rotateFillHue 3s infinite reverse linear; }
           }
         }
       }
@@ -78,9 +78,9 @@ nav {
   }
 }
 
+.container { max-width: 640px; margin: 0 auto; }
+
 .footer {
-  max-width: 640px;
-  margin:0 auto;
   .left  { float: left;  }
   .right { float: right; }
 }
