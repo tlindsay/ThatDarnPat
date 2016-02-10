@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'animations';
+#contact-form {
+  fieldset {
+    border:none;
+    &#identity, &#message { display:inline-block; }
+    &#identity{ min-width: 200px; }
+    &#message { width: 100%; max-width: 380px; height: 100%; vertical-align: top; }
+  }
+  label, input { display: block; }
+  input, textarea {
+    background: transparent;
+    font-family: sans-serif;
+    border: none;
+    border-bottom: 1px solid $dg;
+
+    outline: none;
+  }
+  input { margin: 10px 0 20px; }
+  textarea { 
+    width: 100%;
+    min-height: 70px;
+    padding: 10px;
+    border-left: 1px solid $dg;
+    line-height: 16px;
+  }
+  .g-recaptcha { display:inline-block; }
+  .submit {
+    background-color: $dg;
+    color: $white;
+    display:inline-block;
+    height: 76px;
+    padding: 0px 30px;
+    margin: 1px 30px;
+    vertical-align: top;
+    font-size: 24px;
+    border: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 100;
+    &:hover{
+      animation: rotateBackgroundHue 3s infinite linear;
+      cursor: pointer;
+    }
+  }
+}

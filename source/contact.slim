@@ -1,0 +1,16 @@
+---
+title: 'Contact'
+---
+script[src="https://www.google.com/recaptcha/api.js"]
+= form_tag '//formspree.io/patrick.lindsay@me.com', method: 'post', id: 'contact-form'
+  = field_set_tag id: 'identity'
+    label for="name"= "Name:"
+    = text_field_tag :name, placeholder: lorem.name
+    label for="_replyto"= "Email:"
+    = email_field_tag :_replyto, placeholder: lorem.email
+  = field_set_tag id: 'message'
+    label for="message"= "Message:"
+    = text_area_tag :message, placeholder: lorem.paragraphs(2)
+  = field_set_tag
+    .g-recaptcha[data-sitekey="6Lcr3hcTAAAAAHBRCuRAc29MJGXDME0UtghohNeQ"]
+    = submit_tag 'Submit', class: 'submit'
