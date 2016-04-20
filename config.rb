@@ -35,6 +35,10 @@
 require 'evil_icons'
 helpers EvilIcons::Helpers
 
+after_configuration do
+  sprockets.append_path(EvilIcons.assets_dir)
+end
+
 # Automatic image dimensions on image_tag helper
 # activate :automatic_image_sizes
 

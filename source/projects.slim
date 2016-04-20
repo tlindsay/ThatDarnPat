@@ -1,1 +1,13 @@
-| hey
+---
+title: 'projects'
+---
+.projects
+  - data.projects.projects.each do |p|
+    .project
+      = image_tag p.image unless p.image.blank?
+      = link_to p.title, "https://github.com/#{p.github}"
+      .body
+        - 3.times do
+          p= lorem.paragraph
+        = link_to "https://github.com/#{p.github}", class: 'gh'
+          = evil_icon 'ei-sc-github', size: :l

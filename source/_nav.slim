@@ -1,13 +1,16 @@
 nav
   ul.navigation
-    li.nav-item
-      = link_to 'About', 'about'
-    li.nav-item
-      = link_to 'Projects', 'projects'
-    li.nav-item
-      = link_to '/', class: 'logo' do
-        = inline_svg('svg/logo.svg')
-    li.nav-item
-      = link_to 'Resumé', 'resume'
-    li.nav-item
-      = link_to 'Contact', 'contact'
+    section
+      li.nav-item
+        = link_to 'About', 'about'
+      li.nav-item
+        = link_to 'Projects', 'projects'
+    section
+      li.nav-item
+        = link_to '/', class: 'logo' do
+          = inline_svg('svg/logo.svg')
+    section
+      li.nav-item
+        = link_to 'Resumé', 'resume'
+      li.nav-item
+        = link_to 'Contact', 'contact'

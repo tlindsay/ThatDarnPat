@@ -10,7 +10,6 @@ html
 
     title= "#{current_page.data.title || 'That Darn Pat'} | Patrick Lindsay"
 
-    = stylesheet_link_tag 'https://cdn.jsdelivr.net/evil-icons/1.7.8/evil-icons.min.css'
     = stylesheet_link_tag 'styles'
     = stylesheet_link_tag current_page.data.title.downcase unless current_page.data.title.blank?
     = javascript_include_tag 'main'
@@ -25,7 +24,7 @@ html
       == yield
     .container.footer
       .social
-        = link_to '//twitter.com/thatdarnpat', title: 'Twitter'
+        = link_to '//twitter.com/thatdarnpat', title: 'Twitter', target: 'blank'
           = evil_icon 'ei-sc-twitter', size: :l
-        = link_to '//github.com/tlindsay', title: 'Github'
+        = link_to '//github.com/tlindsay', title: 'Github', target: 'blank'
           = evil_icon 'ei-sc-github', size: :l

@@ -11,7 +11,7 @@
     border:none;
     &#identity, &#message { display:inline-block; }
     &#identity{ min-width: 200px; }
-    &#message { width: 100%; max-width: 380px; height: 100%; vertical-align: top; }
+    &#message { width: calc(100% - 28px); max-width: 380px; height: 100%; vertical-align: top; }
   }
 
   fieldset#identity, fieldset#message {
@@ -28,20 +28,22 @@
       &:focus { border-width: 2px; animation: rotateBorderHue 3s infinite linear; }
     }
     input { 
-      margin: 10px 0 20px;
+      margin: 10px 0 35px;
       padding-bottom: 5px;
       width: 100%;
     }
     textarea { 
-      width: 100%;
-      min-height: 85px;
+      width: calc(100% - 20px);
+      min-height: 135px;
       padding: 10px;
       border-left: 1px solid $dg;
       line-height: 20px;
     }
   }
 
-  .g-recaptcha { display:inline-block; }
+  .g-recaptcha { 
+    display:inline-block;
+  }
   .submit {
     background-color: $dg;
     color: $white;
@@ -60,6 +62,20 @@
     &:hover{
       animation: rotateBackgroundHue 3s infinite linear;
       cursor: pointer;
+    }
+  }
+
+  @media($bp-phone) {
+    .g-recaptcha {
+      width: 300px;
+      display: block;
+      margin: 0 auto 1em;
+    }
+
+    .submit {
+      width: 300px;
+      display: block;
+      margin: 0 auto;
     }
   }
 }

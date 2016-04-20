@@ -1,8 +1,15 @@
 
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+@import url(https://fontlibrary.org/face/fantasque-sans-mono);
 
 @mixin butler {
   font-family: 'Butler';
+}
+
+@mixin fantasque {
+  font-family: 'FantasqueSansMonoRegular';
+  font-weight: normal;
+  font-style: normal;
 }
 
 @mixin libre {

@@ -17,10 +17,9 @@ html
     = yield_content :assets
 
   body
-    .container
-      - @index = true
-      == yield
-      = partial 'nav'
+    - @index = true
+    == yield
+    = partial 'nav'
     .footer
     /   .footer--f-block.left
     /     | Made by Patrick Lindsay
