@@ -27,6 +27,16 @@ set :fonts_dir, 'fonts'
 
 activate :directory_indexes
 
+activate :dotenv
+
+activate :s3_sync do |s3|
+  s3.bucket = 'thatdarnpat.com'
+  s3.aws_access_key_id = ENV['ACCESS_KEY_ID']
+  s3.aws_secret_access_key = ENV['SECRET_KEY']
+  s3.prefer_gzip = true
+  s3.index_document = 'index.html'
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment

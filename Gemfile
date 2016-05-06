@@ -18,6 +18,8 @@ gem 'slim'
 gem 'jquery-middleman'
 gem 'middleman-autoprefixer'
 
-gem 'middleman-gh-pages'
+gem 'middleman-dotenv'
+gem 'middleman-s3_sync'
+gem 'unf'
 
 gem 'evil_icons'
