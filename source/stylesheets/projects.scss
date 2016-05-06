@@ -60,13 +60,17 @@
 
   img { display: block; margin: 1em auto; max-width: 250px; }
 
-  a {
-    @include fantasque;
-    animation: rotateHue 3.25s infinite linear;
-    color: $dg;
-    font-size: 1.1em;
-    text-decoration: none;
+  p a {
+    @include copy_link;
+    z-index: 1;
+  }
+    // @include fantasque;
+    // animation: rotateHue 3.25s infinite linear;
+    // color: $dg;
+    // font-size: 1.1em;
+    // text-decoration: none;
 
+  a {
     .icon { color: $mg; fill: $mg; }
 
     &:hover .icon { animation: rotateFillHue 3.25s infinite linear; }
