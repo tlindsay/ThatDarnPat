@@ -1,4 +1,47 @@
 @import 'variables';
 @import 'animations';
 
-p { line-height: 1.5em; }
+p {
+  color: $dg;
+  font-size: 2vw;
+  line-height: 1.5em;
+  @media(max-width: 767px) { font-size: 16px; }
+}
+
+.content {
+  padding: 0 1em;
+
+  a {
+    color: $mg;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      animation: none;
+      color: $white;
+      &::before { height: 115%; }
+    }
+
+    &::before {
+      animation: rotateBackgroundHue 6s infinite linear;
+      bottom: 0;
+      content: '';
+      height: 3px;
+      position: absolute;
+      transition: height .25s;
+      width: 100%;
+      z-index: -1;
+    }
+  }
+}
+
+.me {
+  animation: rotateBorderHue 6s infinite linear;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  display: inline;
+  float: right;
+  max-width: 40vw;
+}
+
