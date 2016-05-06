@@ -8,7 +8,7 @@ html
     meta name="keywords"    content="Patrick Lindsay, Web Development"
     meta name="author"      content="Patrick Lindsay"
 
-    title= "#{current_page.data.title || 'That Darn Pat'} | Patrick Lindsay"
+    title= "#{current_page.data.title.titlecase || 'That Darn Pat'} | Patrick Lindsay"
 
     = stylesheet_link_tag 'https://fontlibrary.org/face/fantasque-sans-mono'
     = stylesheet_link_tag 'styles'
