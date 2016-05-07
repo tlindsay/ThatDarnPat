@@ -17,7 +17,6 @@ gem 'sass'
 gem 'slim'
 gem 'jquery-middleman'
 gem 'middleman-autoprefixer'
-gem 'middleman-favicon-maker'
 
 gem 'middleman-dotenv'
 gem 'middleman-s3_sync'
