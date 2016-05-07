@@ -7,9 +7,9 @@ script[src="https://www.google.com/recaptcha/api.js"]
   .error-message
   = field_set_tag id: 'identity'
     label for="name"= "Name:"
-    = text_field_tag :name, placeholder: lorem.name, autofocus: true
+    = text_field_tag :name, placeholder: "John Doe", autofocus: true
     label for="_replyto"= "Email:"
-    = email_field_tag :_replyto, placeholder: lorem.email
+    = email_field_tag :_replyto, placeholder: "john.doe@mail.com"
   = field_set_tag id: 'message'
     label for="message"= "Message:"
     = text_area_tag :message, placeholder: lorem.paragraphs(2)
