@@ -13,7 +13,6 @@
   max-width: calc(316px - 2em);
   position: relative;
   text-align: center;
-  transition: width .5s, height .5s;
   vertical-align: top;
   width: 100%;
 
@@ -64,11 +63,6 @@
     @include copy_link;
     z-index: 1;
   }
-    // @include fantasque;
-    // animation: rotateHue 3.25s infinite linear;
-    // color: $dg;
-    // font-size: 1.1em;
-    // text-decoration: none;
 
   a {
     .icon { color: $mg; fill: $mg; }
