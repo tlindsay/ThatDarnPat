@@ -14,6 +14,7 @@
 
 @mixin libreBold {
   font-family: 'Libre Baskerville Bold';
+  font-weight: bold;
 }
 
 @font-face {
@@ -26,28 +27,24 @@
   font-family: 'Butler';
   src: url('/assets/butler/Butler_Light.otf');
   font-weight: 200;
-  font-weight: lighter;
 }
 
 @font-face {
   font-family: 'Butler';
   src: url('/assets/butler/Butler_Regular.otf');
   font-weight: 400;
-  font-weight: normal;
 }
 
 @font-face {
   font-family: 'Butler';
   src: url('/assets/butler/Butler_Bold.otf');
   font-weight: 700;
-  font-weight: bold;
 }
 
 @font-face {
   font-family: 'Butler';
   src: url('/assets/butler/Butler_ExtraBold.otf');
   font-weight: 800;
-  font-weight: bolder;
 }
 
 @font-face {

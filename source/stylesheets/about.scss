@@ -4,6 +4,7 @@
 p {
   color: $dg;
   font-size: 2vw;
+  font-weight: 700;
   line-height: 1.5em;
   @media(max-width: 767px) { font-size: 16px; }
 }
@@ -13,27 +14,6 @@ p {
 
   a {
     @include copy_link;
-    // color: $mg;
-    // position: relative;
-    // text-decoration: none;
-    // white-space: nowrap;
-
-    // &:hover {
-    //   animation: none;
-    //   color: $white;
-    //   &::before { height: 115%; }
-    // }
-
-    // &::before {
-    //   animation: rotateBackgroundHue 6s infinite linear;
-    //   bottom: 0;
-    //   content: '';
-    //   height: 3px;
-    //   position: absolute;
-    //   transition: height .25s;
-    //   width: 100%;
-    //   z-index: -1;
-    // }
   }
 }
 
