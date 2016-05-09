@@ -38,10 +38,11 @@
     }
     textarea { 
       width: calc(100% - 20px);
-      min-height: 135px;
+      min-height: 155px;
       padding: 10px;
       border-left: 1px solid $dg;
       line-height: 20px;
+      resize: vertical;
     }
   }
 
@@ -54,7 +55,7 @@
     display:inline-block;
     height: 76px;
     padding: 0px 30px;
-    margin: 1px 30px;
+    margin: 1px 0 1px 30px;
     vertical-align: top;
     font-size: 24px;
     border: none;
@@ -62,6 +63,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 100;
+    width: 270px;
     &:focus { outline: none; }
     &:hover{
       animation: rotateBackgroundHue 3s infinite linear;

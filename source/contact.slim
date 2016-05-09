@@ -12,7 +12,7 @@ script[src="https://www.google.com/recaptcha/api.js"]
     = email_field_tag :_replyto, placeholder: "john.doe@mail.com"
   = field_set_tag id: 'message'
     label for="message"= "Message:"
-    = text_area_tag :message, placeholder: lorem.paragraphs(2)
+    = text_area_tag :message, placeholder: lorem.paragraph
   = field_set_tag
     .g-recaptcha[data-sitekey="6Lcr3hcTAAAAAHBRCuRAc29MJGXDME0UtghohNeQ"]
     = submit_tag 'Submit', class: 'submit'
