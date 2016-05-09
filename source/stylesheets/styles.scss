@@ -44,6 +44,7 @@ nav {
       vertical-align: top;
 
       a {
+        @include libreBold;
         padding: 1em;
         text-decoration: none;
         color: $dg;
