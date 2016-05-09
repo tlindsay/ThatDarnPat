@@ -65,6 +65,7 @@
   }
 
   a {
+    text-decoration: none;
     .icon { color: $mg; fill: $mg; }
 
     &:hover .icon { animation: rotateFillHue 3.25s infinite linear; }
