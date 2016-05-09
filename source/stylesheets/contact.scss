@@ -12,6 +12,8 @@
     &#identity, &#message { display:inline-block; }
     &#identity{ min-width: 200px; }
     &#message { width: calc(100% - 28px); max-width: 380px; height: 100%; vertical-align: top; }
+
+    input, textarea { border-radius: 0; -webkit-appearance: none; }
   }
 
   fieldset#identity, fieldset#message {
@@ -24,6 +26,8 @@
       font-size: 14px;
 
       outline: none;
+
+      @media($bp-phone) { font-size: 16px; }
 
       &:focus { border-width: 2px; animation: rotateBorderHue 3s infinite linear; }
     }
