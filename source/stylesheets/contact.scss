@@ -2,27 +2,38 @@
 @import 'animations';
 
 .success-message {
-  h1 { font-size: 4em; animation: rotateHue 3s infinite; }
+  h1 { animation: rotateHue 3s infinite; font-size: 4em; }
   h3 { font-size: 2em; }
+
+  @media(max-width: 426px) { margin: 0 auto; width: 300px; }
 }
 
 #contact-form {
   fieldset {
-    border:none;
-    &#identity, &#message { display:inline-block; }
+    border: 0;
+
+    &#identity,
+    &#message { display:inline-block; }
+
     &#identity{ min-width: 200px; }
+
     &#message { width: calc(100% - 28px); max-width: 380px; height: 100%; vertical-align: top; }
 
-    input, textarea { border-radius: 0; -webkit-appearance: none; }
+    input,
+    textarea { border-radius: 0; -webkit-appearance: none; }
   }
 
-  fieldset#identity, fieldset#message {
-    label, input { display: block; }
-    input, textarea {
+  fieldset#identity,
+  fieldset#message {
+    label,
+    input { display: block; }
+
+    input,
+    textarea {
       background: transparent;
-      font-family: sans-serif;
-      border: none;
+      border: 0;
       border-bottom: 1px solid $dg;
+      font-family: sans-serif;
       font-size: 14px;
 
       outline: none;
@@ -31,57 +42,59 @@
 
       &:focus { border-width: 2px; animation: rotateBorderHue 3s infinite linear; }
     }
-    input { 
+
+    input {
       margin: 10px 0 35px;
       padding-bottom: 5px;
       width: 100%;
     }
-    textarea { 
-      width: calc(100% - 20px);
-      min-height: 155px;
-      padding: 10px;
+
+    textarea {
       border-left: 1px solid $dg;
       line-height: 20px;
+      min-height: 155px;
+      padding: 10px;
       resize: vertical;
+      width: calc(100% - 20px);
     }
   }
 
-  .g-recaptcha { 
-    display:inline-block;
+  .g-recaptcha {
+    display: inline-block;
   }
+
   .submit {
     background-color: $dg;
+    border: 0;
     color: $white;
-    display:inline-block;
-    height: 76px;
-    padding: 0px 30px;
-    margin: 1px 0 1px 30px;
-    vertical-align: top;
-    font-size: 24px;
-    border: none;
+    display: inline-block;
     font-family: sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    font-size: 24px;
     font-weight: 100;
+    height: 76px;
+    letter-spacing: 2px;
+    margin: 1px 0 1px 30px;
+    padding: 0 30px;
+    text-transform: uppercase;
+    vertical-align: top;
     width: 270px;
+
     &:focus { outline: none; }
-    &:hover{
+
+    &:hover {
       animation: rotateBackgroundHue 3s infinite linear;
       cursor: pointer;
     }
   }
 
   @media($bp-phone) {
+    .submit,
     .g-recaptcha {
-      width: 300px;
-      display: block;
-      margin: 0 auto 1em;
-    }
-
-    .submit {
-      width: 300px;
       display: block;
       margin: 0 auto;
+      width: 300px;
     }
+
+    .g-recaptcha { margin: 0 auto 1em; }
   }
 }
