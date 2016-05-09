@@ -29,6 +29,8 @@ activate :directory_indexes
 
 activate :dotenv
 
+activate :autoprefixer
+
 activate :s3_sync do |s3|
   s3.bucket = 'thatdarnpat.com'
   s3.aws_access_key_id = ENV['ACCESS_KEY_ID']
