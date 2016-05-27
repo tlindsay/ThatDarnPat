@@ -18,6 +18,7 @@ gem 'slim'
 gem 'jquery-middleman'
 gem 'middleman-autoprefixer'
 gem 'middleman-inliner'
+gem 'middleman-meta-tags'
 gem 'middleman-minify-html'
 gem 'middleman-imageoptim'
 

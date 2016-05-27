@@ -4,11 +4,9 @@ html
     meta charset="UTF-8"
     meta name="viewport"    content="width=device-width, initial-scale=1.0"
 
-    meta name="description" content="Patrick Lindsay, Web Developer, Portfolio"
-    meta name="keywords"    content="Patrick Lindsay, Web Development"
-    meta name="author"      content="Patrick Lindsay"
-
     title= "#{current_page.data.title.titlecase || 'That Darn Pat'} | Patrick Lindsay"
+
+    = auto_display_meta_tags
 
     link[rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152-precomposed.png"]
     link[rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144-precomposed.png"]

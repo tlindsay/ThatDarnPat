@@ -33,6 +33,8 @@ activate :autoprefixer
 
 activate :inliner
 
+activate :meta_tags
+
 activate :imageoptim
 
 activate :s3_sync do |s3|
