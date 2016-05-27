@@ -31,6 +31,10 @@ activate :dotenv
 
 activate :autoprefixer
 
+activate :inliner
+
+activate :imageoptim
+
 activate :s3_sync do |s3|
   s3.bucket = 'thatdarnpat.com'
   s3.aws_access_key_id = ENV['ACCESS_KEY_ID']
@@ -48,6 +52,9 @@ configure :build do
 
   # Minify Javascript on build
   activate :minify_javascript
+
+  # Minify HTML on build
+  activate :minify_html
 
   # Enable cache buster
   activate :asset_hash
