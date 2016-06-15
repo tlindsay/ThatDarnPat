@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/thatdarnpat
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://thatdarnpat.com
+  * I am thatdarnpat (https://keybase.io/thatdarnpat) on keybase.
+  * I have a public key ASCi2y_1tqE5sn4oEkO_lVWJBckF_qE1JWnZ6shLZGEEsAo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0120a2db2ff5b6a139b27e281243bf95558905c905fea1352569d9eac84b646104b00a",
+            "host": "keybase.io",
+            "kid": "0120a2db2ff5b6a139b27e281243bf95558905c905fea1352569d9eac84b646104b00a",
+            "uid": "bcd70c20cffb38f9a1b1a36f84638e19",
+            "username": "thatdarnpat"
+        },
+        "service": {
+            "hostname": "thatdarnpat.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.15"
+    },
+    "ctime": 1466003378,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1466003364,
+        "hash": "4d553e89ad261251c8cf2b8c796401ec13186919d1efdf2c6b41ebc50ad661767a7c219e171ab4a0197907d5f250af592a9c10c5f2003c5fc046485cee498656",
+        "seqno": 487814
+    },
+    "prev": "e95cca80e5211eadfe37818979135e51a5158a074dbf78587359f75b75b1330f",
+    "seqno": 9,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+g6Rib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgotsv9bahObJ+KBJDv5VViQXJBf6hNSVp2erIS2RhBLAKp3BheWxvYWTFAvl7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwYTJkYjJmZjViNmExMzliMjdlMjgxMjQzYmY5NTU1ODkwNWM5MDVmZWExMzUyNTY5ZDllYWM4NGI2NDYxMDRiMDBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwYTJkYjJmZjViNmExMzliMjdlMjgxMjQzYmY5NTU1ODkwNWM5MDVmZWExMzUyNTY5ZDllYWM4NGI2NDYxMDRiMDBhIiwidWlkIjoiYmNkNzBjMjBjZmZiMzhmOWExYjFhMzZmODQ2MzhlMTkiLCJ1c2VybmFtZSI6InRoYXRkYXJucGF0In0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ0aGF0ZGFybnBhdC5jb20iLCJwcm90b2NvbCI6Imh0dHA6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjE1In0sImN0aW1lIjoxNDY2MDAzMzc4LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE0NjYwMDMzNjQsImhhc2giOiI0ZDU1M2U4OWFkMjYxMjUxYzhjZjJiOGM3OTY0MDFlYzEzMTg2OTE5ZDFlZmRmMmM2YjQxZWJjNTBhZDY2MTc2N2E3YzIxOWUxNzFhYjRhMDE5NzkwN2Q1ZjI1MGFmNTkyYTljMTBjNWYyMDAzYzVmYzA0NjQ4NWNlZTQ5ODY1NiIsInNlcW5vIjo0ODc4MTR9LCJwcmV2IjoiZTk1Y2NhODBlNTIxMWVhZGZlMzc4MTg5NzkxMzVlNTFhNTE1OGEwNzRkYmY3ODU4NzM1OWY3NWI3NWIxMzMwZiIsInNlcW5vIjo5LCJ0YWciOiJzaWduYXR1cmUifaNzaWfEQIeBkVApGjjUJ3Bgi12CSa0hRUYpr3jGlgm0QxX+30QzVvLZZsqySF+SmTe/4bni7U1S0ZUhUEZjZ4WmzTvUJQeoc2lnX3R5cGUgo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/thatdarnpat
+
+==================================================================
