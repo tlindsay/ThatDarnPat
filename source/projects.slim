@@ -8,7 +8,7 @@ title: 'projects'
       h2.title= p.title
       .body
         - if p.slug
-          = partial "projects/#{p.slug}"
+          = partial "projects/#{p.slug}", locals: {p: p}
         - if p.github.present?
           = link_to "https://github.com/#{p.github}", class: 'gh'
             = evil_icon 'ei-sc-github', size: :l
