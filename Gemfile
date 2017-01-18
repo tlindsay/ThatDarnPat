@@ -27,3 +27,5 @@ gem 'middleman-s3_sync'
 gem 'unf'
 
 gem 'evil_icons'
+
+gem 'puma'
