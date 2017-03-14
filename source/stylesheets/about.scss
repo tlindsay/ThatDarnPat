@@ -15,6 +15,11 @@ p {
   a {
     @include copy_link;
   }
+
+  abbr {
+    animation: rotateBorderHue 6s infinite linear;
+    &:hover{ cursor: help; }
+  }
 }
 
 .me {
