@@ -38,7 +38,7 @@ activate :meta_tags
 activate :imageoptim
 
 activate :s3_sync do |s3|
-  s3.bucket = 'thatdarnpat.com'
+  s3.bucket = ENV['S3_BUCKET']
   s3.aws_access_key_id = ENV['ACCESS_KEY_ID']
   s3.aws_secret_access_key = ENV['SECRET_KEY']
   s3.prefer_gzip = true
