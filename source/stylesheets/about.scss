@@ -29,5 +29,6 @@ p {
   display: inline;
   float: right;
   max-width: 40vw;
+  shape-outside: inset(0 round 50%);
 }
 
