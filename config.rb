@@ -66,4 +66,7 @@ configure :build do
 
   # gzip that shit
   activate :gzip
+
+  # Sitemapz
+  activate :sitemap, hostname: 'http://thatdarnpat.com'
 end

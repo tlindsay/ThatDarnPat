@@ -144,6 +144,8 @@ GEM
       parallel
       ruby-progressbar
       unf
+    middleman-sitemap (0.0.13)
+      middleman-core (>= 3.2.2)
     middleman-sprockets (3.4.2)
       middleman-core (>= 3.3)
       sprockets (~> 2.12.1)
@@ -220,6 +222,7 @@ DEPENDENCIES
   middleman-meta-tags
   middleman-minify-html
   middleman-s3_sync
+  middleman-sitemap
   puma
   sass
   slim

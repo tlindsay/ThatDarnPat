@@ -21,6 +21,7 @@ gem 'middleman-inliner'
 gem 'middleman-meta-tags'
 gem 'middleman-minify-html'
 gem 'middleman-imageoptim'
+gem 'middleman-sitemap'
 
 gem 'middleman-dotenv'
 gem 'middleman-s3_sync'
