@@ -1,22 +1,48 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { useEffect, useState } from 'react';
+import ShaderCanvas from '@signal-noise/react-shader-canvas';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import useViewport from '../hooks/use-viewport';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+import Ball from '../images/Ball.svg';
+import frag from '../shaders/purpleFrag.glsl';
+import vert from '../shaders/standardVert.glsl';
 
-export default IndexPage
+const IndexPage = () => {
+  const { width, height } = useViewport();
+  const backdropStyles = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    zIndex: -1
+  };
+
+  return (
+    <Layout style={{ background: 'transparent', color: 'white', fontFamily: `"Fantasque Sans Mono" monospace` }}>
+      <SEO title="Home" />
+      <h1>Patrick Lindsay</h1>
+      <p>is a Senior Software Engineer at DockYard.</p>
+      <ShaderCanvas
+        height={height}
+        width={width}
+        fragShader={frag}
+        vertShader={vert}
+        uniforms={{
+          aspect: (width / height),
+        }}
+        style={{
+          ...backdropStyles,
+          zIndex: -2
+        }} />
+      <Ball style={{
+        ...backdropStyles,
+        backgroundColor: 'transparent'
+      }} />
+    </Layout>
+  )
+};
+
+export default IndexPage;
