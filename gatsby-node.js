@@ -5,3 +5,19 @@
  */
 
 // You can delete this file if you're not using it
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.(glsl|vs|fs|vert|frag)$/,
+          exclude: /node_modules/,
+          use: [
+            'raw-loader',
+            'glslify-loader'
+          ]
+        }
+      ]
+    }
+  });
+};
