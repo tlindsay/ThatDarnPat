@@ -6,8 +6,8 @@ import SEO from '../components/seo';
 import useViewport from '../hooks/use-viewport';
 
 import Ball from '../images/Ball.svg';
-import frag from '../shaders/purpleFrag.glsl';
-import vert from '../shaders/standardVert.glsl';
+import frag from '../shaders/purple.frag';
+import vert from '../shaders/standard.vert';
 
 const IndexPage = () => {
   const { width, height } = useViewport();
