@@ -1,16 +1,57 @@
-import React, { useEffect, useState } from 'react';
+/* globals process */
+import React, { useState } from 'react';
+import Gui, { GuiBool, GuiNumber } from 'react-gui-controller';
 import ShaderCanvas from '@signal-noise/react-shader-canvas';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import useViewport from '../hooks/use-viewport';
+import useReducedMotion from '../hooks/use-prefers-reduced-motion';
+import useDarkMode from '../hooks/use-dark-mode';
 
-import Ball from '../images/Ball.svg';
-import frag from '../shaders/purple.frag';
+import frag from '../shaders/a11y-blob.frag';
 import vert from '../shaders/standard.vert';
+
+const PURPLE = {
+  rgb: { r: 166, g: 64, b: 191 },
+  hsl: { h: 288, s: 0.5, l: 0.5 },
+  hex: '#a640bf'
+};
+
+const PINK = {
+  hsl: { h: 320.4, s: 0.45, l: 0.6 }
+};
+
+const ShaderConfig = ({ uniforms, setUniforms }) => {
+  const handleUpdate = ({ u_hue, u_sat, u_lum, u_variance, u_reduce_motion }) => {
+    setUniforms((prevState) => {
+      return {
+        ...prevState,
+        u_hue: Number(u_hue),
+        u_sat: Number(u_sat),
+        u_lum: Number(u_lum),
+        u_variance: Number(u_variance),
+        u_reduce_motion: !!u_reduce_motion
+      };
+    });
+  };
+
+  return (
+    <Gui data={uniforms} onUpdate={handleUpdate}>
+      <GuiNumber path='u_hue' label='Hue' min={0} max={1} step={0.01} />
+      <GuiNumber path='u_sat' label='Sat' min={0} max={1} step={0.05} />
+      <GuiNumber path='u_lum' label='Luminance' min={0} max={1} step={0.05} />
+      <GuiNumber path='u_variance' label='Color Variance' min={0} max={1} step={0.05} />
+      <GuiBool path='u_reduce_motion' label='Reduce Motion' />
+    </Gui>
+  );
+};
 
 const IndexPage = () => {
   const { width, height } = useViewport();
+  const isDevelopment = process.env.NODE_ENV === 'development';
+  const COLOR = useDarkMode() ? PINK : PURPLE;
+
   const backdropStyles = {
     position: 'absolute',
     top: 0,
@@ -20,29 +61,47 @@ const IndexPage = () => {
     zIndex: -1
   };
 
+  const [uniforms, setUniforms] = useState({
+    aspect: width / height,
+    u_hue: COLOR.hsl.h / 360.0,
+    u_sat: COLOR.hsl.s,
+    u_lum: COLOR.hsl.l,
+    u_variance: 0.1,
+    u_reduce_motion: useReducedMotion()
+  });
+
   return (
-    <Layout style={{ background: 'transparent', color: 'white', fontFamily: `"Fantasque Sans Mono" monospace` }}>
+    <Layout
+      disableTitle={true}
+      style={{
+        background: 'transparent',
+        color: 'white',
+        fontFamily: '"Fantasque Sans Mono" monospace',
+        paddingTop: '3em'
+      }}
+    >
       <SEO title="Home" />
-      <h1>Patrick Lindsay</h1>
-      <p>is a Senior Software Engineer at DockYard.</p>
+
+      {isDevelopment ? <ShaderConfig uniforms={uniforms} setUniforms={setUniforms} /> : ''}
+
+      <div style={{ display: 'flex' }}>
+        <div>
+          <h1>Patrick Lindsay</h1>
+          <p>is a Senior Software Engineer at DockYard.</p>
+        </div>
+      </div>
       <ShaderCanvas
         height={height}
         width={width}
         fragShader={frag}
         vertShader={vert}
-        uniforms={{
-          aspect: (width / height),
-        }}
+        uniforms={uniforms}
         style={{
           ...backdropStyles,
           zIndex: -2
         }} />
-      <Ball style={{
-        ...backdropStyles,
-        backgroundColor: 'transparent'
-      }} />
     </Layout>
-  )
+  );
 };
 
 export default IndexPage;

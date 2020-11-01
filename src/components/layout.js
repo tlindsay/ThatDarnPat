@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
 import './layout.css';
 
-const Layout = ({ children, style }) => {
+const Layout = ({ children, style, disableTitle = false }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,25 +24,37 @@ const Layout = ({ children, style }) => {
   `);
 
   return (
-    <>
-      <div
-        style={{
-          ...style,
-          alignItems: 'stretch',
-          display: 'flex',
-          flexDirection: 'column',
-          height: '100vh',
-          justifyContent: 'space-between',
-          margin: '0 auto',
-          maxWidth: 960,
-          padding: '0 1.0875rem 1.45rem',
-        }}
-      >
-        <Header siteTitle="ThatDarnPat" />
-        <main>{children}</main>
-        <footer>© {new Date().getFullYear()} Patrick Lindsay</footer>
-      </div>
-    </>
+    <div
+      style={{
+        ...style,
+        alignItems: 'stretch',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100vh',
+        justifyContent: 'space-evenly',
+        margin: '0 auto',
+        maxWidth: 960,
+        padding: '0 1.0875rem 1.45rem',
+      }}
+    >
+      <main>{children}</main>
+      <footer style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>© {new Date().getFullYear()} Patrick Lindsay</div>
+        <nav>
+          <ul>
+            <li style={{ display: 'inline', listStyle: 'none', marginLeft: '1em' }}>
+              <a style={{ color: 'white' }} href="https://github.com/tlindsay">Github</a>
+            </li>
+            <li style={{ display: 'inline', listStyle: 'none', marginLeft: '1em' }}>
+              <a style={{ color: 'white' }} href="https://twitter.com/thatdarnpat">Twitter</a>
+            </li>
+            <li style={{ display: 'inline', listStyle: 'none', marginLeft: '1em' }}>
+              <a style={{ color: 'white' }} href="https://linkedin.com/thomaspatricklindsay">LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
   );
 };
 
