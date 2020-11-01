@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-react-svg": "^3.0.0",
+    "gh-pages-deploy": "^0.5.1",
     "glsl-aastep": "^1.0.1",
     "glsl-dither": "^1.0.1",
     "glsl-hsl2rgb": "^1.1.0",
@@ -36,6 +37,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "deploy": "gh-pages-deploy",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
@@ -48,5 +50,11 @@
   },
   "bugs": {
     "url": "https://github.com/tlindsay/thatdarnpat/issues"
+  },
+  "gh-pages-deploy": {
+    "prep": [
+      "build"
+    ],
+    "staticpath": "public"
   }
 }
