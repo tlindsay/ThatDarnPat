@@ -20,10 +20,12 @@
     "raw-loader": "^4.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-gui-controller": "^1.0.4",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "gatsby-plugin-react-svg": "^3.0.0",
+    "glsl-aastep": "^1.0.1",
     "glsl-dither": "^1.0.1",
     "glsl-hsl2rgb": "^1.1.0",
     "glsl-noise": "^0.0.0",
