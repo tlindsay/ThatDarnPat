@@ -1,7 +1,8 @@
-/* globals process */
 import React, { useState } from 'react';
+import loadable from '@loadable/component';
 import Gui, { GuiBool, GuiNumber } from 'react-gui-controller';
-import ShaderCanvas from '@signal-noise/react-shader-canvas';
+
+const ShaderCanvas = loadable(() => import('@signal-noise/react-shader-canvas'));
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
