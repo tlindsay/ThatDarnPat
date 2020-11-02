@@ -12,7 +12,7 @@ const getInitialState = () => {
   // prefers reduced motion, but it doesn't matter. This value
   // will be overwritten on the client, before any animations
   // occur.
-  return isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
+  return isRenderingOnServer ? true : window.matchMedia(QUERY).matches;
 };
 
 function useDarkMode() {
@@ -23,7 +23,7 @@ function useDarkMode() {
   useEffect(() => {
     const mediaQueryList = window.matchMedia(QUERY);
     const listener = (event) => {
-      setPrefersDarkMode(!event.matches);
+      setPrefersDarkMode(event.matches);
     };
     mediaQueryList.addListener(listener);
     return () => {

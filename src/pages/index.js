@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import loadable from '@loadable/component';
 import Gui, { GuiBool, GuiNumber } from 'react-gui-controller';
 
@@ -51,7 +51,7 @@ const ShaderConfig = ({ uniforms, setUniforms }) => {
 const IndexPage = () => {
   const { width, height } = useViewport();
   const isDevelopment = process.env.NODE_ENV === 'development';
-  const COLOR = useDarkMode() ? PINK : PURPLE;
+  const isDarkMode = useDarkMode();
 
   const backdropStyles = {
     position: 'absolute',
@@ -62,14 +62,29 @@ const IndexPage = () => {
     zIndex: -1
   };
 
+  const [color, setColor] = useState(isDarkMode ? PURPLE : PINK);
+
   const [uniforms, setUniforms] = useState({
     aspect: width / height,
-    u_hue: COLOR.hsl.h / 360.0,
-    u_sat: COLOR.hsl.s,
-    u_lum: COLOR.hsl.l,
+    u_hue: color.hsl.h / 360.0,
+    u_sat: color.hsl.s,
+    u_lum: color.hsl.l,
     u_variance: 0.1,
     u_reduce_motion: useReducedMotion()
   });
+
+  useEffect(() => {
+    setColor(isDarkMode ? PURPLE : PINK);
+  }, [isDarkMode]);
+
+  useEffect(() => {
+    setUniforms((prevState) => ({
+      ...prevState,
+      u_hue: color.hsl.h / 360.0,
+      u_sat: color.hsl.s,
+      u_lum: color.hsl.l,
+    }));
+  }, [color]);
 
   return (
     <Layout
