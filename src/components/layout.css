@@ -606,4 +606,11 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+  footer {
+    flex-direction: column-reverse;
+  }
+
+  nav ul {
+    margin: 1.45rem 0;
+  }
 }

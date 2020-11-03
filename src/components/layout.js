@@ -29,13 +29,13 @@ const Layout = ({ children, style }) => (
       <div>© {new Date().getFullYear()} Patrick Lindsay</div>
       <nav>
         <ul>
-          <li style={{ display: 'inline', listStyle: 'none', marginLeft: '1em' }}>
+          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
             <a style={{ color: 'white' }} href="https://github.com/tlindsay">Github</a>
           </li>
-          <li style={{ display: 'inline', listStyle: 'none', marginLeft: '1em' }}>
+          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
             <a style={{ color: 'white' }} href="https://twitter.com/thatdarnpat">Twitter</a>
           </li>
-          <li style={{ display: 'inline', listStyle: 'none', marginLeft: '1em' }}>
+          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
             <a style={{ color: 'white' }} href="https://linkedin.com/thomaspatricklindsay">LinkedIn</a>
           </li>
         </ul>
