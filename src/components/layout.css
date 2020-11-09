@@ -1,3 +1,10 @@
+@font-face {
+  font-display: swap;
+  font-family: 'FantasqueSansMonoRegular';
+  src: url('https://fontlibrary.org/assets/fonts/fantasque-sans-mono/99bd6bf2755c7f6b5f5c62daf6807aea/f47be69e1b8c931931d2da5b5e9e9797/FantasqueSansMonoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -185,7 +192,7 @@ textarea {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em 'Fantasque Sans Mono', monospace;
+  font: 112.5%/1.45em 'FantasqueSansMonoRegular', monospace;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -579,8 +586,8 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: "Fantasque Sans Mono", "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
-    "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "FantasqueSansMonoRegular", "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
+  "Liberation Mono", Menlo, Courier, monospace;
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
