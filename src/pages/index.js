@@ -103,7 +103,7 @@ const IndexPage = () => {
       <div style={{ display: 'flex' }}>
         <div>
           <h1>Patrick Lindsay</h1>
-          <p>is a Senior Software Engineer at <a href="https://dockyard.com">DockYard</a>.</p>
+          <p>is a Senior Software Engineer at <a style={{ color: 'white' }} href="https://dockyard.com">DockYard</a>.</p>
         </div>
       </div>
       <ShaderCanvas
