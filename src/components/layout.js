@@ -36,7 +36,7 @@ const Layout = ({ children, style }) => (
             <a style={{ color: 'white' }} href="https://twitter.com/thatdarnpat">Twitter</a>
           </li>
           <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
-            <a style={{ color: 'white' }} href="https://linkedin.com/thomaspatricklindsay">LinkedIn</a>
+            <a style={{ color: 'white' }} href="https://linkedin.com/in/thomaspatricklindsay">LinkedIn</a>
           </li>
         </ul>
       </nav>
