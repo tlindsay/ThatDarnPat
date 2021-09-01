@@ -30,6 +30,9 @@ const Layout = ({ children, style }) => (
       <nav>
         <ul>
           <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
+            <a style={{ color: 'white' }} href="https://read.cv/thatdarnpat">CV</a>
+          </li>
+          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
             <a style={{ color: 'white' }} href="https://github.com/tlindsay">Github</a>
           </li>
           <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
