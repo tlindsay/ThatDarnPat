@@ -22,7 +22,7 @@ module.exports = {
         short_name: `ThatDarnPat`,
         start_url: `/`,
         background_color: `#a640bf`,
-        theme_color: `#663399`,
+        theme_color: `#c76ba8`,
         display: `minimal-ui`,
         icon: `src/images/pat-emoji.png`, // This path is relative to the root of the site.
       },
