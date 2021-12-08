@@ -91,8 +91,8 @@ const IndexPage = () => {
   }, [color]);
 
   useEffect(() => {
-    setWidth(width + CANVAS_OVERFLOW);
-    setHeight(height + CANVAS_OVERFLOW);
+    setWidth(initialWidth + CANVAS_OVERFLOW);
+    setHeight(initialHeight + CANVAS_OVERFLOW);
   }, [initialWidth, initialHeight]);
 
   return (
