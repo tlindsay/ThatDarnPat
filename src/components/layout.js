@@ -14,6 +14,11 @@ const Layout = ({ children, style }) => (
   <div
     style={{
       ...style,
+      overflow: 'hidden',
+      position: 'relative',
+    }}
+  >
+    <div style={{
       alignItems: 'stretch',
       display: 'flex',
       flexDirection: 'column',
@@ -22,28 +27,28 @@ const Layout = ({ children, style }) => (
       margin: '0 auto',
       maxWidth: 960,
       padding: '0 1.0875rem 1.45rem',
-    }}
-  >
-    <main>{children}</main>
-    <footer style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <div>© {new Date().getFullYear()} Patrick Lindsay</div>
-      <nav>
-        <ul>
-          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
-            <a style={{ color: 'white' }} href="https://read.cv/thatdarnpat">CV</a>
-          </li>
-          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
-            <a style={{ color: 'white' }} href="https://github.com/tlindsay">Github</a>
-          </li>
-          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
-            <a style={{ color: 'white' }} href="https://twitter.com/thatdarnpat">Twitter</a>
-          </li>
-          <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
-            <a style={{ color: 'white' }} href="https://linkedin.com/in/thomaspatricklindsay">LinkedIn</a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
+    }}>
+      <main>{children}</main>
+      <footer style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>© {new Date().getFullYear()} Patrick Lindsay</div>
+        <nav>
+          <ul>
+            <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
+              <a style={{ color: 'white' }} href="https://read.cv/thatdarnpat">CV</a>
+            </li>
+            <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
+              <a style={{ color: 'white' }} href="https://github.com/tlindsay">Github</a>
+            </li>
+            <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
+              <a style={{ color: 'white' }} href="https://twitter.com/thatdarnpat">Twitter</a>
+            </li>
+            <li style={{ display: 'inline', listStyle: 'none', marginRight: '1em' }}>
+              <a style={{ color: 'white' }} href="https://linkedin.com/in/thomaspatricklindsay">LinkedIn</a>
+            </li>
+          </ul>
+        </nav>
+      </footer>
+    </div>
   </div>
 );
 

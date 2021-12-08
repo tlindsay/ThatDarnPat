@@ -23,6 +23,8 @@ const PINK = {
   hsl: { h: 320.4, s: 0.45, l: 0.6 }
 };
 
+const CANVAS_OVERFLOW = 100;
+
 const ShaderConfig = ({ uniforms, setUniforms }) => {
   const handleUpdate = ({ u_hue, u_sat, u_lum, u_variance, u_reduce_motion }) => {
     setUniforms((prevState) => {
@@ -49,7 +51,7 @@ const ShaderConfig = ({ uniforms, setUniforms }) => {
 };
 
 const IndexPage = () => {
-  const { width, height } = useViewport();
+  const { width: initialWidth, height: initialHeight } = useViewport();
   const isDevelopment = process.env.NODE_ENV === 'development';
   const isDarkMode = useDarkMode();
 
@@ -62,6 +64,8 @@ const IndexPage = () => {
     zIndex: -1
   };
 
+  const [width, setWidth] = useState(initialWidth);
+  const [height, setHeight] = useState(initialHeight);
   const [color, setColor] = useState(isDarkMode ? PURPLE : PINK);
 
   const [uniforms, setUniforms] = useState({
@@ -86,6 +90,11 @@ const IndexPage = () => {
     }));
   }, [color]);
 
+  useEffect(() => {
+    setWidth(width + CANVAS_OVERFLOW);
+    setHeight(height + CANVAS_OVERFLOW);
+  }, [initialWidth, initialHeight]);
+
   return (
     <Layout
       disableTitle={true}
@@ -93,7 +102,6 @@ const IndexPage = () => {
         background: 'transparent',
         color: 'white',
         fontFamily: '"Fantasque Sans Mono" monospace',
-        paddingTop: '3em'
       }}
     >
       <SEO title="Home" />
