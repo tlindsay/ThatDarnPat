@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `✌️  ThatDarnPat`,
-    description: `Patrick Lindsay is a Senior Software Engineer at DockYard.`,
+    description: `Patrick Lindsay is a bookworm, musician, sandwich enthusiast and software engineer based in Florence, AL.`,
     author: `@thatdarnpat`,
   },
   plugins: [
