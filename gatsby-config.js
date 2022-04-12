@@ -3,6 +3,11 @@ module.exports = {
     title: `✌️  ThatDarnPat`,
     description: `Patrick Lindsay is a bookworm, musician, sandwich enthusiast and software engineer based in Florence, AL.`,
     author: `@thatdarnpat`,
+    job: {
+      employer: 'Fastly',
+      title: 'Senior Software Engineer',
+      url: 'https://fastly.com',
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -30,6 +35,6 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    `gatsby-plugin-react-svg`
+    `gatsby-plugin-react-svg`,
   ],
 };

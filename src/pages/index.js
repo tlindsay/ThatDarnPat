@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import loadable from '@loadable/component';
 import Gui, { GuiBool, GuiNumber } from 'react-gui-controller';
 
-const ShaderCanvas = loadable(() => import('@signal-noise/react-shader-canvas'));
+const ShaderCanvas = loadable(() =>
+  import('@signal-noise/react-shader-canvas')
+);
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -16,17 +19,23 @@ import vert from '../shaders/standard.vert';
 const PURPLE = {
   rgb: { r: 166, g: 64, b: 191 },
   hsl: { h: 288, s: 0.5, l: 0.5 },
-  hex: '#a640bf'
+  hex: '#a640bf',
 };
 
 const PINK = {
-  hsl: { h: 320.4, s: 0.45, l: 0.6 }
+  hsl: { h: 320.4, s: 0.45, l: 0.6 },
 };
 
 const CANVAS_OVERFLOW = 100;
 
 const ShaderConfig = ({ uniforms, setUniforms }) => {
-  const handleUpdate = ({ u_hue, u_sat, u_lum, u_variance, u_reduce_motion }) => {
+  const handleUpdate = ({
+    u_hue,
+    u_sat,
+    u_lum,
+    u_variance,
+    u_reduce_motion,
+  }) => {
     setUniforms((prevState) => {
       return {
         ...prevState,
@@ -34,23 +43,49 @@ const ShaderConfig = ({ uniforms, setUniforms }) => {
         u_sat: Number(u_sat),
         u_lum: Number(u_lum),
         u_variance: Number(u_variance),
-        u_reduce_motion: !!u_reduce_motion
+        u_reduce_motion: !!u_reduce_motion,
       };
     });
   };
 
   return (
     <Gui data={uniforms} onUpdate={handleUpdate}>
-      <GuiNumber path='u_hue' label='Hue' min={0} max={1} step={0.01} />
-      <GuiNumber path='u_sat' label='Sat' min={0} max={1} step={0.05} />
-      <GuiNumber path='u_lum' label='Luminance' min={0} max={1} step={0.05} />
-      <GuiNumber path='u_variance' label='Color Variance' min={0} max={1} step={0.05} />
-      <GuiBool path='u_reduce_motion' label='Reduce Motion' />
+      <GuiNumber path="u_hue" label="Hue" min={0} max={1} step={0.01} />
+      <GuiNumber path="u_sat" label="Sat" min={0} max={1} step={0.05} />
+      <GuiNumber path="u_lum" label="Luminance" min={0} max={1} step={0.05} />
+      <GuiNumber
+        path="u_variance"
+        label="Color Variance"
+        min={0}
+        max={1}
+        step={0.05}
+      />
+      <GuiBool path="u_reduce_motion" label="Reduce Motion" />
     </Gui>
   );
 };
 
 const IndexPage = () => {
+  const {
+    site: {
+      siteMetadata: { job },
+    },
+  } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            job {
+              employer
+              title
+              url
+            }
+          }
+        }
+      }
+    `
+  );
+
   const { width: initialWidth, height: initialHeight } = useViewport();
   const isDevelopment = process.env.NODE_ENV === 'development';
   const isDarkMode = useDarkMode();
@@ -61,7 +96,7 @@ const IndexPage = () => {
     left: 0,
     width: '100%',
     height: '100%',
-    zIndex: -1
+    zIndex: -1,
   };
 
   const [width, setWidth] = useState(initialWidth);
@@ -74,7 +109,7 @@ const IndexPage = () => {
     u_sat: color.hsl.s,
     u_lum: color.hsl.l,
     u_variance: 0.1,
-    u_reduce_motion: useReducedMotion()
+    u_reduce_motion: useReducedMotion(),
   });
 
   useEffect(() => {
@@ -106,12 +141,22 @@ const IndexPage = () => {
     >
       <SEO title="Home" />
 
-      {isDevelopment ? <ShaderConfig uniforms={uniforms} setUniforms={setUniforms} /> : ''}
+      {isDevelopment ? (
+        <ShaderConfig uniforms={uniforms} setUniforms={setUniforms} />
+      ) : (
+        ''
+      )}
 
       <div style={{ display: 'flex' }}>
         <div>
           <h1>Patrick Lindsay</h1>
-          <p>is a Senior Software Engineer at <a style={{ color: 'white' }} href="https://fastly.com">Fastly</a>.</p>
+          <p>
+            is a {job.title} at{' '}
+            <a style={{ color: 'white' }} href={job.url}>
+              {job.employer}
+            </a>
+            .
+          </p>
         </div>
       </div>
       <ShaderCanvas
@@ -122,8 +167,9 @@ const IndexPage = () => {
         uniforms={uniforms}
         style={{
           ...backdropStyles,
-          zIndex: -2
-        }} />
+          zIndex: -2,
+        }}
+      />
     </Layout>
   );
 };
